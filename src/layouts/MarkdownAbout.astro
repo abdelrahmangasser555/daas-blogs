@@ -7,6 +7,7 @@ import NavArticle from "../components/layout/NavArticle.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import Tools from "../components/portfolio/Tools.astro";
 const { frontmatter } = Astro.props;
+import Image from "astro/components/Image.astro";
 ---
 
 <script>
@@ -34,31 +35,19 @@ const { frontmatter } = Astro.props;
         <div
           class="transition-all justify-center w-full gap-8 max-md:gap-3 max-lg:gap-2 flex flex-col items-center z-0 relative dark:from-mint-950 dark:to-zinc-950"
         >
-          <div class="aspect-square h-60 max-md:size-32">
-            <div
-              class="group-hover:scale-105 relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-full dark:p-[1.5px] p-[2px] transition-all duration-500"
-            >
-              <div
-                class="absolute inset-0 h-full w-full rounded-fullfrom-transparent to-riptide-500 dark:from-transparent f dark:to-mint-300 animate-rotate-border bg-conic/[from_var(--border-angle)]"
-              >
-              </div>
-              <div class="relative z-20 flex w-full rounded-full bg-mint-900">
-                <div
-                  class="w-full aspect-square rounded-full bg-[url(/images/efeeleprofile.webp)] bg-center bg-cover"
-                  aria-label="Photo of Fernando Aldair López Ponce (EFEELE) for the blog"
-                >
-                  <a
-                    href="/about-me"
-                    class="flex h-full w-full"
-                    aria-label="View about me page"></a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Image 
+            class="rounded-full w-62 h-62 max-md:w-24 max-md:h-24"
+            src={"/images/daas/daasLogo.svg"}
+            alt={"DAAS Logo"}
+            width={200}
+            height={200}
+            loading="lazy"
+            decoding="async"
+          />
 
           <div class="w-full flex flex-col justify-center gap-4 max-md:gap-2">
             <div class="text-center">
-              <Heading textGradient="Fernando López | EFEELE" />
+              <Heading textGradient="DAAS AI" />
             </div>
 
             <p
@@ -66,18 +55,17 @@ const { frontmatter } = Astro.props;
             >
               <b
                 class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text"
-                >Frontend Developer</b
-              > with <b
+                >Business Development Platform</b
+              > that acts as a <b
                 class="bg-gradient-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text"
-                >8 years of experience</b
-              >, passionate about development, technology, and coffee that
-              sparks ideas. I love bringing digital projects to life. 🚀☕
+                >virtual co-founder</b
+              > for startups, accelerating market readiness and investment opportunities through our innovative IRM system. 🚀💼
             </p>
           </div>
         </div>
       </div>
       <div class="flex gap-4 items-center">
-        <Heading text="About" textGradient="me" />
+        <Heading text="About" textGradient="DAAS" />
       </div>
 
       <div class="markdown text-white" id="content">
@@ -89,14 +77,14 @@ const { frontmatter } = Astro.props;
   <section class="py-8 px-8 max-md:py-4 mb-4 scroll-m-16" id="experience">
     <div class="flex flex-col gap-8 pt-8 max-w-4xl mx-auto">
       <div class="flex gap-4 items-center justify-center">
-        <Icon class="text-3xl text-white" name="briefcase" />
-        <Heading text="Experience" textGradient="Work" level={2} />
+        <!-- <Icon class="text-3xl text-white" name="briefcase" /> -->
+        <Heading text="" textGradient="4 HORSE MEN" level={2} />
       </div>
 
       <Experience />
     </div>
   </section>
-  <section class="py-8 px-8 max-md:py-4 mt-10 mb-20 scroll-m-16" id="sttack">
+  <!-- <section class="py-8 px-8 max-md:py-4 mt-10 mb-20 scroll-m-16" id="sttack">
     <div class="flex flex-col gap-8 max-w-3xl justify-center mx-auto">
       <div class="flex gap-4 items-center justify-center">
         <Icon class="text-3xl text-white" name="dashboard" />
@@ -104,6 +92,6 @@ const { frontmatter } = Astro.props;
       </div>
       <Tools variant="center" />
     </div>
-  </section>
+  </section> -->
   <Contact />
 </Layout>

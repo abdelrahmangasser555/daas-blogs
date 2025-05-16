@@ -1,35 +1,56 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
-const EXPERIENCE = [
+const TEAM_MEMBERS = [
   {
-    date: "2021 - Present",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
+    image: "", // Add image URL here
+    name: "Ossama Amin",
+    title: "Business Developer & Founder",
+    company: "DAAS",
     description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
+      "Visionary leader and founder of DAAS, focused on business development and strategic growth. Brings extensive experience in market analysis and business operations to drive the company's mission forward.",
+    date: "Founder",
   },
   {
-    date: "2019 - 2020",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
+    image: "", // Add image URL here
+    name: "Abdelrahman Gasser",
+    title: "Software Engineer & Full Stack Developer",
+    company: "DAAS",
     description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
+      "founder and technical expert with comprehensive skills in full stack development. Creates robust, scalable solutions and leads technical implementation across projects while bringing an entrepreneurial mindset to problem-solving.",
+    date: "Founder",
   },
-  
+  {
+    image: "", // Add image URL here
+    name: "Yusuf Emad",
+    title: "Software Engineer & GenAI Specialist",
+    company: "DAAS",
+    description:
+      "founder with specialized expertise in Generative AI technologies. Combines software engineering skills with cutting-edge AI knowledge to develop innovative solutions that push the boundaries of what's possible in the digital space.",
+    date: "Founder",
+  },
+  {
+    image: "", // Add image URL here
+    name: "Ahmed El Morsy",
+    title: "Marketing Strategist",
+    company: "DAAS",
+    description:
+      "founder overseeing the marketing vision of DAAS. Develops comprehensive marketing strategies to enhance brand visibility and drive customer engagement, with a focus on digital marketing and community building.",
+    date: "Founder",
+  },
 ];
 ---
 
-<div class="relative max-md:mt-0 mt-8" aria-label="Professional experience">
+<div class="relative max-md:mt-0 mt-8" aria-label="Our Team">
   <ol class="relative mt-10">
     {
-      EXPERIENCE.map((experience, index) => (
+      TEAM_MEMBERS.map((member, index) => (
         <li class="">
-          <article role="article" aria-labelledby={`experience-title-${index}`}>
+          <article role="article" aria-labelledby={`team-member-${index}`}>
             <div
-              class="flex flex-col gap-2  text-zinc-00 dark:text-zinc-300 md:col-span-3"
-              aria-describedby={`experience-title-${index}`}
+              class="flex flex-col gap-2 text-zinc-00 dark:text-zinc-300 md:col-span-3"
+              aria-describedby={`team-member-${index}`}
             >
-              <ExperienceItem {...experience} />
+              <ExperienceItem {...member} />
             </div>
           </article>
         </li>
