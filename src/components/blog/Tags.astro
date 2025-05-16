@@ -1,0 +1,50 @@
+---
+const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
+import Tag from "../ui/Tag.astro";
+
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+type VariantType = "default" | "vertical" | "compact";
+const { variant = "default" } = Astro.props as { variant?: VariantType };
+
+// Common base classes
+const baseClasses = "w-full lg:w-4/5 mx-auto";
+
+// Variant-specific classes
+const variantClasses: Record<VariantType, string> = {
+    default: "max-lg:px-8 py-8 max-md:py-4 flex-wrap mx-auto gap-4 max-sm:gap-3 justify-center items-center flex flex-row",
+    vertical: "gap-6 justify-start items-start flex flex-col",
+    compact: "flex-wrap mx-auto gap-2 max-sm:gap-3 justify-start flex flex-row"
+};
+
+// Combine base classes with variant-specific classes
+const classes = `${baseClasses} ${variantClasses[variant]}`;
+
+const {
+    showRecentPosts = false,
+}  = Astro.props
+---
+{  showRecentPosts &&
+(<div class="w-full lg:w-3/5 mx-auto">
+    <div class="flex items-center justify-between gap-4 mb-6 mt-5">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">RECENT POSTS</h1>
+        <div class="flex items-center flex-grow">
+            <hr class="flex-grow border-gray-300 dark:border-gray-700 mr-4" />
+            <a
+                href="/blog/posts/"
+                class="font-bold text-sm uppercase tracking-wider cursor-pointer bg-gradient-to-r from-mint-400 to-mint-500 dark:from-mint-300 dark:to-mint-100 bg-clip-text text-transparent hover:scale-105 transition-all duration-300 hover:brightness-110"
+            >
+                View all posts →
+            </a>
+        </div>
+    </div>
+</div>)}
+<div id="tags" class={classes}>
+    {tags.map((tag) => <Tag tag={tag}></Tag>)}
+</div>
+
+
+
+
+
+
+

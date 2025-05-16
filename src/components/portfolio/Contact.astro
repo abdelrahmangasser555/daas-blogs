@@ -1,0 +1,49 @@
+---
+import Heading from "../ui/Heading.astro";
+import Button from "../ui/Button.astro";
+
+const mail = "";
+const title = "";
+const subtitle = "JUST DAAS IT";
+const buttonText = "VISIT US";
+const buttonIcon = "paperplane";
+import Image from "astro/components/Image.astro";
+---
+
+<section>
+  <div
+    class="w-full border-b bg-gradient-to-b from-mint-100 to-transparent dark:from-transparent  dark:to-mint-800 dark:border-mint-950 border-mint-100"
+  >
+    <div class="mx-auto max-w-5xl px-8 py-24 max-sm:py-12">
+      <div class="flex items-center justify-between max-sm:flex-col max-sm:gap-8 max-sm:text-center">
+        <div class="max-w-lg">
+          <div class="flex flex-col items-center gap-4 mb-6">
+            <Image
+              src="/images/daas/daasLogo.svg"
+              alt="Fernando López"
+              class="rounded-full w-36 h-36 object-cover"
+              width={64}
+              height={64}
+            />
+           
+          <Heading
+            text={title}
+            textGradient={subtitle}
+            level={2}
+          />
+          </div>
+        </div>
+        <div
+          class="transition-all duration-500 group-hover:animate-jump group-hover:animate-duration-[300ms] group-hover:animate-ease-in-out group-hover:scale-105 hover:scale-125"
+        >   
+          <Button
+            variant="big"
+            link={`https://ai-daas.com`}
+            text={buttonText}
+            iconName={buttonIcon}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
